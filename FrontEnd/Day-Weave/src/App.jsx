@@ -1,35 +1,37 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import './App.css';
+import { getCurrentYear } from './utils';
 
 function App() {
-  const [count, setCount] = useState(0)
+    const currentYear = new Date().getFullYear();
 
-  return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+    return (
+        <div id="page">
+            <header className="header">
+                <h1>DayWeave</h1>
+            </header>
+            <nav className="nav">
+                <button onClick={() => window.location.href = '/about'}>About Us</button>
+                <button onClick={() => window.location.href = '/contact'}>Contact</button>
+            </nav>
+            <nav className="auth-bar">
+                <button onClick={() => window.location.href = '/login'}>Log In</button>
+                <button onClick={() => window.location.href = '/signup'}>Sign Up</button>
+            </nav>
+            <div className="hero">
+                <h1>Stay Organized, Always</h1>
+                <p>Plan, manage, and keep track of your schedule with ease.</p>
+                <section id="tutorial">
+                    <h2>Tutorial</h2>
+                    <p>Learn how to use the app with our <a href="#">step-by-step guide</a>.</p>
+                </section>
+                <button onClick={() => window.location.href = '#create'}>Create New Calendar</button>
+            </div>
+            <footer className="footer">
+                <p>&copy; {currentYear} Calendar App. All rights reserved.</p>
+            </footer>
+        </div>
+    );
 }
 
-export default App
+export default App;
