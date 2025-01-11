@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
-import { getCurrentYear } from './utils';
+import { getCurrentYear } from './components/utils';
+import Navbar from './components/NavBar';
 
 function App() {
     const currentYear = new Date().getFullYear();
