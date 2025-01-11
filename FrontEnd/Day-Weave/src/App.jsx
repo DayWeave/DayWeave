@@ -6,9 +6,9 @@ function App() {
     const currentYear = new Date().getFullYear();
 
     return (
-        <div>
+        <div id="page">
             <header className="header">
-                <h1>Calendar App</h1>
+                <h1>DayWeave</h1>
             </header>
             <nav className="nav">
                 <button onClick={() => window.location.href = '/about'}>About Us</button>

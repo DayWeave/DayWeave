@@ -1,7 +1,14 @@
 @import url("https://fonts.googleapis.com/css?family=Raleway:200,700|Source+Sans+Pro:300,600,300italic,600italic");
 /* Our Custom Code Goes Here */
-
+#page {
+  text-align: center; /*Page is id of whole page centers all text write under to override*/
+} 
 .header h1 {
+  text-align: center;
+  font-size: 3rem;
+}
+
+.footer {
   text-align: center;
 }
 
