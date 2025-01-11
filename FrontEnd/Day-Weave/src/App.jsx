@@ -28,7 +28,7 @@ function App() {
                 <button onClick={() => window.location.href = '#create'}>Create New Calendar</button>
             </div>
             <footer className="footer">
-                <p>&copy; {currentYear} Calendar App. All rights reserved.</p>
+                <p>&copy; {currentYear} DayWeave. All rights reserved.</p>
             </footer>
         </div>
     );
