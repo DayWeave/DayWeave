@@ -1,6 +1,7 @@
 import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
+import Navbar from "../NavBar/NavBar";
 
 function Home() {
     const currentYear = new Date().getFullYear();
@@ -10,20 +11,9 @@ function Home() {
             <header className="header">
                 <h1>DayWeave</h1>
             </header>
-
-            <nav className="nav">
-                <button>About Us</button>
-                <button>Contact</button>
-            </nav>
-
-            <nav className="auth-bar">
-                <Link to="/login">
-                    <button>Log In</button>
-                </Link>
-                <Link to="/signup">
-                    <button>Sign Up</button>
-                </Link>
-            </nav>
+            <div>
+                <Navbar></Navbar>
+            </div>
 
             <div className="hero">
                 <h1>Stay Organized, Always</h1>

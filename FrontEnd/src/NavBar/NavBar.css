@@ -1,0 +1,43 @@
+/* Navbar container */
+.nav_bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #222;
+    padding: 15px 30px;
+  }
+  
+  /* Logo on the left */
+  .logo {
+    width: 120px; /* Adjust size */
+    height: auto;
+  }
+  
+  /* Container for navigation buttons */
+  .nav_links {
+    display: flex;
+    align-items: center;
+    gap: 20px; /* Spacing between buttons */
+  }
+  
+  /* Auth bar (Log In, Sign Up, Tutorial) */
+  .auth_bar {
+    display: flex;
+    gap: 15px;
+  }
+  
+  /* Styling for buttons */
+  button {
+    background-color: #fff;
+    color: #222;
+    border: none;
+    padding: 10px 15px;
+    cursor: pointer;
+    font-size: 16px;
+    border-radius: 5px;
+  }
+  
+  button:hover {
+    background-color: #ddd;
+  }
+  
