@@ -4,7 +4,7 @@
     justify-content: space-between;  /* Ensures left and right sections are spaced out */
     align-items: center;
     background-color: #222;
-    padding: 15px 30px;
+    padding: 10px 30px;
     color: white;
 }
 
@@ -17,7 +17,7 @@
 
 /* Logo */
 .logo {
-    width: 120px; /* Adjust as needed */
+    width: 80px; /* Adjust as needed */
     height: auto;
 }
 

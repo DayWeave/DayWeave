@@ -2,16 +2,13 @@ import React from 'react';
 import './Home.css';
 import { Link } from 'react-router-dom';
 import Navbar from "../NavBar/NavBar";
+import Footer from "../Footer/Footer";
 
 function Home() {
-    const currentYear = new Date().getFullYear();
-
     return (
         <div id="page">
-            <div>
-                <Navbar></Navbar>
-            </div>
-
+            <Navbar></Navbar>
+            
             <header className="header">
                 <h1>DayWeave</h1>
             </header>
@@ -25,10 +22,7 @@ function Home() {
                 </section>
                 <button onClick={() => window.location.href = '#create'}>Create New Calendar</button>
             </div>
-
-            <footer className="footer">
-                <p>&copy; {currentYear} DayWeave. All rights reserved.</p>
-            </footer>
+            <Footer></Footer>
         </div>
     );
 }
