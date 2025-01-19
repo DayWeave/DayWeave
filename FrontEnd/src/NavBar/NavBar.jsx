@@ -6,15 +6,17 @@ import "./Navbar.css"; // Import CSS file
 const Navbar = () => {
   return (
     <nav className="nav_bar">
-      {/* Logo on the Left */}
-      <img src={LogoPlaceholder} alt="Company Logo" className="logo" />
+      {/* Left Section: Logo + About + Contact */}
+      <div className="nav_left">
+        <img src={LogoPlaceholder} alt="Company Logo" className="logo" />
+        <div className="nav_links">
+          <button className="about">About Us</button>
+          <button className="contact">Contact</button>
+        </div>
+      </div>
 
-      {/* Navigation Buttons on the Right */}
-      <div className="nav_links">
-        <button className="about">About Us</button>
-        <button className="contact">Contact</button>
-
-        {/* Authentication and Tutorial */}
+      {/* Right Section: Auth buttons (Log In, Sign Up, Tutorial) */}
+      <div className="nav_right">
         <div className="auth_bar">
           <Link to="/login">
             <button className="login">Log In</button>

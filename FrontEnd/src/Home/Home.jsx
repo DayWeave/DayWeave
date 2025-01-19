@@ -8,12 +8,13 @@ function Home() {
 
     return (
         <div id="page">
-            <header className="header">
-                <h1>DayWeave</h1>
-            </header>
             <div>
                 <Navbar></Navbar>
             </div>
+
+            <header className="header">
+                <h1>DayWeave</h1>
+            </header>
 
             <div className="hero">
                 <h1>Stay Organized, Always</h1>
