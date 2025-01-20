@@ -12,16 +12,16 @@ function Home() {
             </header>
 
             <nav className="nav">
-                <button>About Us</button>
-                <button>Contact</button>
+                <button className="about-btn">About Us</button>
+                <button className="contact-btn">Contact</button>
             </nav>
 
             <nav className="auth-bar">
                 <Link to="/login">
-                    <button>Log In</button>
+                    <button className="auth-btn">Log In</button>
                 </Link>
                 <Link to="/signup">
-                    <button>Sign Up</button>
+                    <button className="signup-btn">Sign Up</button>
                 </Link>
             </nav>
 

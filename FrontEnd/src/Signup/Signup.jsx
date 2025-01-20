@@ -2,13 +2,17 @@ import React from 'react';
 import "./Signup.css";
 
 import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
+import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
+import googleLogo from '../components/GoogleLogo.png';
+
 const Signup = () => {
     const navigate = useNavigate();
-    const [createUserWithEmailAndPassword, user, loading, error] = useCreateUserWithEmailAndPassword(auth);
+    const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
+    const [signInWithGoogle, gUser] = useSignInWithGoogle(auth);
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -27,11 +31,11 @@ const Signup = () => {
     };
 
     useEffect(() => {
-        if (user) {
-            // Redirect the user to the Home page (or another route of your choice)
-            navigate('/'); // Redirects to the Home page after successful signup
+        if (user || gUser) {
+            // Currently redirects to home page after signup
+            navigate('/');
         }
-    }, [user, navigate]);
+    }, [user, navigate, gUser]);
 
     return (
         <div className="signup-page">
@@ -68,7 +72,12 @@ const Signup = () => {
                         </div>
                         <br />
                         <div className="alternate-signup">
-                            <button className="google-signup">Sign Up With Google</button>
+                            <div className="google-signup" onClick={() => signInWithGoogle()}>
+                                <div className="google-img-box">
+                                    <img className="google-img" src={googleLogo}/>
+                                </div>
+                                <p className="google-text">Sign up with Google</p>
+                            </div>
                         </div>                        
                     </div>
                 </form>
