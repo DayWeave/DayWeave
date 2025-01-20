@@ -1,11 +1,10 @@
 import React from "react";
+import "./Footer.css";
 
 const Footer = () => {
     const currentYear = new Date().getFullYear();
     return (
-        <div className="Footer">
-            <p>&copy; {currentYear} DayWeave. All rights reserved.</p>
-        </div>
+            <p className="Footer">&copy; {currentYear} DayWeave. All rights reserved.</p>
     );
 };
 

@@ -1,6 +1,12 @@
+#screen {
+
+}
 #page {
 	text-align: center; /*Page is id of whole page centers all text write under to override*/
 } 
+.calandar_description {
+	padding: 15px;
+}
 
 .header h1 {
 	text-align: center;
