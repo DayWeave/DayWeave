@@ -6,6 +6,7 @@ import { useSignInWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
+import { Link } from 'react-router-dom';
 
 import googleLogo from '../components/GoogleLogo.png';
 
@@ -33,43 +34,50 @@ const Login = () => {
 
     return (
         <div className="login-page">
-                    <div className="login-card">
-                        <h1 className="login-title">Login</h1>
-                        <form className="form" onSubmit={handleSubmit}>
-                            <div className="form-input">
-                                <input 
-                                    className="form-field"
-                                    type="email"
-                                    name="email"
-                                    placeholder="Email Address"
-                                    required
-                                />
-                                <input 
-                                    className="form-field"
-                                    type="password"
-                                    name="password"
-                                    placeholder="Password"
-                                    required
-                                />
-                                <p className="login-text">Don't have an account? Sign up!</p>
-                            </div>
-                            <div className="form-buttons">
-                                <div className="form-details">
-                                    <input className="form-submit" type="submit" value="Login" />
-                                </div>
-                                <br />
-                                <div className="alternate-login">
-                                    <div className="google-login" onClick={() => signInWithGoogle()}>
-                                        <div className="google-img-box">
-                                            <img className="google-img" src={googleLogo}/>
-                                        </div>
-                                        <p className="google-text">Login with Google</p>
-                                    </div>
-                                </div>                        
-                            </div>
-                        </form>
+            <div className="back-circle">
+                <Link to="/" className="back-button">
+                    <span className="material-icons back-arrow-icon">arrow_back</span>
+                </Link>
+            </div>
+            <div className="login-card">
+                <h1 className="login-title">Login</h1>
+                <form className="form" onSubmit={handleSubmit}>
+                    <div className="form-input">
+                        <input 
+                            className="form-field"
+                            type="email"
+                            name="email"
+                            placeholder="Email Address"
+                            required
+                        />
+                        <input 
+                            className="form-field"
+                            type="password"
+                            name="password"
+                            placeholder="Password"
+                            required
+                        />
+                        <p className="login-text">Don't have an account?&nbsp;
+                            <Link to="/Signup" className="signup-hyperlink">Sign up!</Link>
+                        </p>
                     </div>
-                </div>
+                    <div className="form-right-side">
+                        <div className="submit-box">
+                            <input className="submit-button" type="submit" value="Login" />
+                        </div>
+                        <div className="alternate-login-box">
+                            <p className="or-text">OR</p>
+                            <div className="google-login-button" onClick={() => signInWithGoogle()}>
+                                <div className="google-img-box">
+                                    <img className="google-img" src={googleLogo}/>
+                                </div>
+                                <p className="google-text">Login with Google</p>
+                            </div>
+                        </div>                        
+                    </div>
+                </form>
+            </div>
+        </div>
     )
 }
 
