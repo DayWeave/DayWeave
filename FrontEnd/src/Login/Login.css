@@ -7,6 +7,29 @@
     background-color: #1f2421;
 }
 
+.back-button {
+    position: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    top: 30px;
+    left: 50px;
+    background-color: rgba(251, 251, 251, 0.39);
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    text-decoration: none;
+    color: black;
+}
+
+.back-button:hover {
+    background-color: rgba(255, 255, 255, 0.724);
+}
+
+.back-arrow-icon {
+    font-size: 35px;
+}
+
 .login-card {
     background-color: #7e6639;
     padding: 20px;
@@ -17,9 +40,9 @@
 
 .login-title {
     margin-left: 40px;
-    font-size: 35px;
+    font-size: 45px;
     margin-bottom: 35px;
-    font-family: 'Helvetica';
+    font-family: "Funnel Display", serif;
 }
 
 .form {
@@ -53,46 +76,67 @@
     font-family: "Funnel Display", serif;
 }
 
+.form-field:focus {
+    outline: 3px solid #000000;
+}
+
 .login-text {
     margin-left: 30px;
 }
 
-.form-buttons {
+.signup-hyperlink {
+    color: #00ffff;
+}
+
+.form-right-side {
     display: flex;
     flex-direction: column;
     flex: 1;
 }
 
-.form-buttons .form-details {
+.form-right-side .submit-box {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    margin-bottom: 30px;
 }
 
-.form-buttons .form-submit {
-    padding: 16px;
-    width: 70%;
+.form-right-side .submit-button {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 325px;
+    height: 55px;
     border-radius: 30px;
     border-color: transparent;
     cursor: pointer;
     background-color: #000000;
+    transition: all 0.3 ease;
     color: white;
-    font-size: 18px;
-    margin-bottom: 15px;
+    font-size: 28px;
     font-family: "Funnel Display", serif;
     font-weight: 600;
 }
 
-.form-buttons .alternate-login {
+.submit-button:hover {
+    background-color: #252525;
+}
+
+.form-right-side .alternate-login-box {
     display: flex;
     flex-direction: column;
     align-items: center;
 }
 
-.alternate-login .google-login {
+.or-text {
+    font-weight: 600;
+}
+
+.alternate-login-box .google-login-button {
     display: flex;
     flex-direction: row;
+    margin-top: 35px;
     align-items: center;
     justify-content: center;
     width: 70%;
@@ -101,6 +145,10 @@
     border: 3px solid black;
     cursor: pointer;
     background-color: transparent;
+}
+
+.google-login-button:hover {
+    background-color: #8f7349;
 }
 
 .google-img-box {

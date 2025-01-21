@@ -5,7 +5,8 @@ import { useCreateUserWithEmailAndPassword } from 'react-firebase-hooks/auth';
 import { useSignInWithGoogle } from 'react-firebase-hooks/auth';
 import { auth } from '../firebase';
 import { useNavigate } from 'react-router-dom';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
+import { Link } from 'react-router-dom';
 
 import googleLogo from '../components/GoogleLogo.png';
 
@@ -13,6 +14,12 @@ const Signup = () => {
     const navigate = useNavigate();
     const [createUserWithEmailAndPassword, user] = useCreateUserWithEmailAndPassword(auth);
     const [signInWithGoogle, gUser] = useSignInWithGoogle(auth);
+    const [error, setError] = useState('');
+
+    const validEmail = (email) => {
+        const emailRegex = /^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,6}$/;
+        return emailRegex.test(email);
+    }
 
     const handleSubmit = (e) => {
         e.preventDefault();
@@ -22,9 +29,17 @@ const Signup = () => {
         const password = e.target.password.value;
         const confirmPassword = e.target.confirmPassword.value;
 
-        if (password !== confirmPassword) {
-            alert("Passwords do not match!");
+        if (!validEmail(email)) {
+            setError("Email is invalid!")
             return;
+        } else if (password.length < 6) {
+            setError("Password is too weak!")
+            return;
+        } else if (password !== confirmPassword) {
+            setError("Passwords don't match!")
+            return;
+        } else {
+            setError('');
         }
 
         createUserWithEmailAndPassword(email, password);
@@ -39,10 +54,15 @@ const Signup = () => {
 
     return (
         <div className="signup-page">
+            <div className="back-circle">
+                <Link to="/" className="back-button">
+                    <span className="material-icons back-arrow-icon">arrow_back</span>
+                </Link>
+            </div>
             <div className="signup-card">
                 <h1 className="signup-title">Sign Up</h1>
                 <form className="form" onSubmit={handleSubmit}>
-                    <div className="form-input">
+                    <div className="form-left-side">
                         <input 
                             className="form-field"
                             type="email"
@@ -64,15 +84,20 @@ const Signup = () => {
                             placeholder="Confirm Password"
                             required
                         />
+                        {error && (<div className="error-box">
+                            <p className="pass-match-error">{error}</p>
+                        </div>)}
+                        <p className="login-text">Already have an account?&nbsp;
+                            <Link to="/Login" className="login-hyperlink">Log In.</Link>
+                        </p>
                     </div>
-                    <div className="form-buttons">
-                        <div className="form-details">
-                            <input className="form-submit" type="submit" value="Sign Up" />
-                            <p className="login-text">Already have an account? Log In.</p>
+                    <div className="form-right-side">
+                        <div className="form-submit-box">
+                            <input className="submit-button" type="submit" value="Sign Up" />
                         </div>
-                        <br />
-                        <div className="alternate-signup">
-                            <div className="google-signup" onClick={() => signInWithGoogle()}>
+                        <div className="alternate-signup-box">
+                            <p className="or-text">OR</p>
+                            <div className="google-signup-button" onClick={() => signInWithGoogle()}>
                                 <div className="google-img-box">
                                     <img className="google-img" src={googleLogo}/>
                                 </div>
