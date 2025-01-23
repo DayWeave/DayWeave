@@ -44,7 +44,3 @@
 .auth_bar a {
     text-decoration: none; /* Remove underline */
 }
-
-.auth_bar a button {
-    color: black;
-}
