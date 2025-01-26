@@ -6,12 +6,13 @@ import "./Navbar.css"; // Import CSS file
 const Navbar = () => {
   return (
     <nav className="nav_bar">
-      {/* Left Section: Logo + About + Contact */}
+      {/* Left Section: Logo + Contact */}
       <div className="nav_left">
         <img src={LogoPlaceholder} alt="Company Logo" className="logo" />
         <div className="nav_links">
-          <button className="about">About Us</button>
-          <button className="contact">Contact</button>
+          <Link to="/contact">
+            <button className="contact">Contact</button>
+          </Link>
         </div>
       </div>
 
