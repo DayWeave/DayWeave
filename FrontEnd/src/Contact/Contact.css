@@ -1,0 +1,82 @@
+.contact-page-content {
+    display: flex;
+    flex-direction: row;
+    background-color: #2e3133;
+    height: auto;
+    min-height: 100vh;
+}
+
+.left-side {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 50px;
+}
+
+.team-title, .contact-title {
+    margin-top: 70px;
+    font-size: 50px;
+    margin-bottom: 40px;
+}
+
+.team-image-box {
+    margin-bottom: 30px;
+}
+
+.team-image {
+    border-radius: 20px;
+    width: 440px;
+    height: auto;
+}
+
+.team-image-description {
+    font-size: 14px;
+    color: #a4a4a4;
+}
+
+.team-description {
+    margin: 0 80px;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+.vertical-line {
+    margin-top: 5vh;
+    border-left: 4px solid rgb(177, 177, 177);
+    margin-bottom: 5vh;
+}
+
+.right-side {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    align-items: center;
+}
+
+.form-user-input {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.form-input {
+    margin-bottom: 20px;
+    padding: 12px;
+    border-radius: 20px;
+    border-color: transparent;
+    background-color: #e1e1e1;
+    color: black;
+    font-size: 18px;
+    font-family: "Funnel Display", serif;
+}
+
+.name-input {
+    margin-left: 20px;
+    margin-right: 10px;
+}
+
+.email-input {
+    margin-left: 10px;
+    margin-right: 20px;
+}

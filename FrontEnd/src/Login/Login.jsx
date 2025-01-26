@@ -8,7 +8,7 @@ import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
-import googleLogo from '../components/GoogleLogo.png';
+import googleLogo from '../assets/GoogleLogo.png';
 
 const Login = () => {
     const navigate = useNavigate();
