@@ -15,74 +15,101 @@ const Contact = () => {
         <div className="contact-page">
             <Navbar></Navbar>
             <div className="contact-page-content">
-                <div className="left-side">
-                    <h1 className="team-title">About The Team</h1>
-                    <div className="team-image-box">
-                        <img className="team-image" src={teamImage} />
-                        <p className="team-image-description">{imageDescription}</p>
+                <div className="contact-left-side">
+                    <h1 className="contact-team-title">About The Team</h1>
+                    <div className="contact-team-image-box">
+                        <img className="contact-team-image" src={teamImage} />
+                        <p className="contact-team-image-description">{imageDescription}</p>
                     </div>
-                    <p className="team-description">{teamDescription1}</p>
-                    <p className="team-description">{teamDescription2}</p>
-                    <p className="team-description">{teamDescription3}</p>
+                    <p className="contact-team-description">{teamDescription1}</p>
+                    <p className="contact-team-description">{teamDescription2}</p>
+                    <p className="contact-team-description">{teamDescription3}</p>
                 </div>
-                <div className="vertical-line" />
-                <div className="right-side">
+                <div className="contact-vertical-line" />
+                <div className="contact-right-side">
                     <h1 className="contact-title">Contact Us</h1>
                     <form className="contact-form">
-                        <div className="form-user-input">
-                            <input 
-                                className="form-input name-input"
-                                type="name"
-                                name="name"
-                                placeholder="Name"
-                                required
-                            />
-                            <input 
-                                className="form-input email-input"
+                        <div className="contact-form-user-input">
+                            <div className="contact-form-input-box">
+                                <label htmlFor="name" className="contact-name-title">
+                                    <span className="contact-req-asterisk">*</span> 
+                                &nbsp; Enter your Name: </label>
+                                <input 
+                                    className="contact-form-input contact-name-input"
+                                    id="name"
+                                    type="name"
+                                    name="name"
+                                    placeholder="Name"
+                                    required
+                                />
+                            </div>
+                            <div className="contact-form-input-box">
+                                <label htmlFor="email" className="contact-email-title">
+                                    <span className="contact-req-asterisk">*</span> 
+                                &nbsp; Enter your Email: </label>
+                                <input 
+                                className="contact-form-input contact-email-input"
+                                id="email"
                                 type="email"
                                 name="email"
                                 placeholder="Email Address"
                                 required
                             />
+                            </div>
                         </div>
-                        <div className="form-select">
-                            <label>
-                                <input
-                                    className="form-button"
-                                    type="radio"
-                                    name="radio"
-                                    value="Option1"
-                                />Option 1
-                            </label>
-                            <label>
-                                <input
-                                    className="form-button"
-                                    type="radio"
-                                    name="radio"
-                                    value="Option2" 
-                                />Option 2
-                            </label>
-                            <label>
-                                <input
-                                    className="form-button"
-                                    type="radio"
-                                    name="radio"
-                                    value="Option3" 
-                                />Option 3
-                            </label>
+                        <div className="contact-form-select">
+                            <label htmlFor="contact-reason" className="contact-reason-title">
+                                    <span className="contact-req-asterisk">*</span> 
+                            &nbsp; Reason For Contacting Us</label>
+                            <div className="contact-form-button-box">
+                                <label className="contact-form-button-label">
+                                    <input
+                                        className="contact-form-button"
+                                        id="contact-reason"
+                                        type="radio"
+                                        name="radio"
+                                        value="Feature Request"
+                                    />Feature Request
+                                </label>
+                                <label className="contact-form-button-label">
+                                    <input
+                                        className="contact-form-button"
+                                        id="contact-reason"
+                                        type="radio"
+                                        name="radio"
+                                        value="Bug / Issue" 
+                                    />Bug / Issue
+                                </label>
+                                <label className="contact-form-button-label">
+                                    <input
+                                        className="contact-form-button"
+                                        id="contact-reason"
+                                        type="radio"
+                                        name="radio"
+                                        value="Other" 
+                                    />Other
+                                </label>
+                            </div>
                         </div>
-                        <input 
-                            className="form-input"
-                            type="description"
-                            name="description"
-                            placeholder="Description"
-                            required
-                        />
-                        <input 
-                            className="submit-button"
-                            type="submit"
-                            value="Submit"
-                        />
+                        <div className="contact-form-input-box">
+                            <p className="contact-description-title">
+                                        <span className="contact-req-asterisk">*</span> 
+                                &nbsp; Description</p>
+                            <textarea 
+                                className="contact-form-input contact-description-input"
+                                type="description"
+                                name="description"
+                                placeholder="Description"
+                                required
+                            />
+                        </div>
+                        <div className="contact-submit-button-box">
+                            <input 
+                                className="contact-submit-button"
+                                type="submit"
+                                value="Submit"
+                            />
+                        </div>
                     </form>
                 </div>
             </div>
