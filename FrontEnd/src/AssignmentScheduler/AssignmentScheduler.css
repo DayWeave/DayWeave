@@ -1,0 +1,350 @@
+.assignment-scheduler {
+    background-color: #2e3141;
+    border-radius: 8px;
+    padding: 2rem;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.scheduler-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.scheduler-header h2 {
+    color: #ffffff;
+    font-size: 2rem;
+    margin: 0 0 0.5rem 0;
+}
+
+.scheduler-header p {
+    color: #b8bcc8;
+    font-size: 1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.scheduler-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+
+.scheduler-settings {
+    background-color: #1a1d29;
+    border-radius: 6px;
+    padding: 1.5rem;
+    border: 1px solid #3a3f54;
+}
+
+.scheduler-settings h3 {
+    color: #ffffff;
+    margin: 0 0 1.5rem 0;
+    font-size: 1.3rem;
+}
+
+.settings-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    margin-bottom: 2rem;
+}
+
+.setting-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+
+.setting-group label {
+    color: #b8bcc8;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.setting-group input {
+    padding: 0.6rem;
+    border: 1px solid #3a3f54;
+    border-radius: 4px;
+    background-color: #2e3141;
+    color: #ffffff;
+    font-size: 0.9rem;
+}
+
+.setting-group input:focus {
+    outline: none;
+    border-color: #4a9eff;
+    box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.2);
+}
+
+.time-preferences {
+    margin-bottom: 1.5rem;
+}
+
+.time-preferences h4 {
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    font-size: 1.1rem;
+}
+
+.time-ranges {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.time-range {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.8rem;
+    background-color: #2e3141;
+    border-radius: 4px;
+    border: 1px solid #3a3f54;
+}
+
+.time-range label {
+    color: #ffffff;
+    font-weight: 500;
+    min-width: 80px;
+}
+
+.time-inputs {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.time-inputs input {
+    width: 60px;
+    padding: 0.4rem;
+    border: 1px solid #3a3f54;
+    border-radius: 4px;
+    background-color: #1a1d29;
+    color: #ffffff;
+    text-align: center;
+}
+
+.time-inputs input:focus {
+    outline: none;
+    border-color: #4a9eff;
+    box-shadow: 0 0 0 2px rgba(74, 158, 255, 0.2);
+}
+
+.time-inputs span {
+    color: #b8bcc8;
+    font-size: 0.9rem;
+}
+
+.additional-settings {
+    margin-bottom: 1.5rem;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #ffffff;
+    cursor: pointer;
+    font-weight: 500;
+}
+
+.checkbox-label input[type="checkbox"] {
+    width: 16px;
+    height: 16px;
+    accent-color: #4a9eff;
+}
+
+.generate-schedule-btn {
+    background-color: #00d4aa;
+    color: white;
+    border: none;
+    padding: 1rem 2rem;
+    border-radius: 6px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    width: 100%;
+}
+
+.generate-schedule-btn:hover:not(:disabled) {
+    background-color: #00c49a;
+}
+
+.generate-schedule-btn:disabled {
+    background-color: #3a3f54;
+    cursor: not-allowed;
+    opacity: 0.6;
+}
+
+.scheduler-results {
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+}
+
+.todays-sessions,
+.upcoming-sessions {
+    background-color: #1a1d29;
+    border-radius: 6px;
+    padding: 1.5rem;
+    border: 1px solid #3a3f54;
+}
+
+.todays-sessions h3,
+.upcoming-sessions h3 {
+    color: #ffffff;
+    margin: 0 0 1rem 0;
+    font-size: 1.2rem;
+}
+
+.no-sessions {
+    color: #b8bcc8;
+    font-style: italic;
+    text-align: center;
+    padding: 2rem;
+    margin: 0;
+}
+
+.sessions-list {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.session-item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    padding: 1rem;
+    background-color: #2e3141;
+    border-radius: 4px;
+    border: 1px solid #3a3f54;
+    transition: background-color 0.2s;
+}
+
+.session-item:hover {
+    background-color: #3a3f54;
+}
+
+.session-date {
+    color: #4a9eff;
+    font-weight: 600;
+    font-size: 0.8rem;
+    min-width: 80px;
+}
+
+.session-time {
+    color: #ffffff;
+    font-weight: 600;
+    font-size: 0.9rem;
+    min-width: 120px;
+}
+
+.session-details {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+}
+
+.session-title {
+    color: #ffffff;
+    font-weight: 500;
+    font-size: 0.9rem;
+}
+
+.session-course {
+    color: #b8bcc8;
+    font-size: 0.8rem;
+}
+
+.session-priority {
+    padding: 0.3rem 0.8rem;
+    border-radius: 12px;
+    font-size: 0.7rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    color: white;
+}
+
+.session-priority.high {
+    background-color: #ff4757;
+}
+
+.session-priority.medium {
+    background-color: #ffa502;
+}
+
+.session-priority.low {
+    background-color: #00d4aa;
+}
+
+/* Responsive Design */
+@media (max-width: 1024px) {
+    .scheduler-content {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 768px) {
+    .assignment-scheduler {
+        padding: 1.5rem;
+    }
+
+    .settings-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .time-range {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .time-range label {
+        min-width: auto;
+        text-align: center;
+    }
+
+    .time-inputs {
+        justify-content: center;
+    }
+
+    .session-item {
+        flex-direction: column;
+        align-items: stretch;
+        gap: 0.5rem;
+    }
+
+    .session-time,
+    .session-date {
+        min-width: auto;
+        text-align: center;
+    }
+
+    .session-priority {
+        align-self: center;
+    }
+}
+
+@media (max-width: 480px) {
+    .assignment-scheduler {
+        padding: 1rem;
+    }
+
+    .scheduler-header h2 {
+        font-size: 1.5rem;
+    }
+
+    .time-inputs input {
+        width: 50px;
+    }
+
+    .generate-schedule-btn {
+        padding: 0.8rem 1.5rem;
+        font-size: 0.9rem;
+    }
+}
+

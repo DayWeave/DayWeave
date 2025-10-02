@@ -4,7 +4,7 @@
     justify-content: center;
     align-items: center;
     height: 100vh;
-    background-color: #1f2421;
+    background-color: var(--primary-bg);
 }
 
 .back-button {
@@ -14,16 +14,21 @@
     align-items: center;
     top: 30px;
     left: 50px;
-    background-color: rgba(251, 251, 251, 0.39);
+    background-color: var(--secondary-bg);
+    border: 1px solid var(--divider-border);
     border-radius: 50%;
     width: 50px;
     height: 50px;
     text-decoration: none;
-    color: black;
+    color: var(--primary-text);
+    transition: all 0.2s ease-in-out;
+    box-shadow: var(--shadow-sm);
 }
 
 .back-button:hover {
-    background-color: rgba(255, 255, 255, 0.724);
+    background-color: var(--hover-accent);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .back-arrow-icon {
@@ -31,18 +36,32 @@
 }
 
 .login-card {
-    background-color: #7e6639;
-    padding: 20px;
-    border-radius: 10px;
+    background-color: var(--secondary-bg);
+    padding: 2rem;
+    border-radius: var(--radius-lg);
     width: 60%;
     height: 60%;
+    box-shadow: var(--shadow-lg);
+    border: 1px solid var(--divider-border);
+}
+
+.auth-card-header {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-bottom: 2rem;
+    text-align: center;
 }
 
 .login-title {
-    margin-left: 40px;
+    margin: 0;
     font-size: 45px;
-    margin-bottom: 35px;
-    font-family: "Funnel Display", serif;
+    color: var(--primary-text);
+    text-align: center;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    font-weight: 700;
 }
 
 .form {
@@ -62,31 +81,41 @@
     padding: 16px;
     box-sizing: border-box;
     width: 90%;
-    border-radius: 30px;
-    border-color: transparent;
-    background-color: #e1e1e1;
-    color: black;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--divider-border);
+    background-color: var(--primary-bg);
+    color: var(--primary-text);
     font-size: 18px;
-    font-family: "Funnel Display", serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    transition: all 0.2s ease-in-out;
 }
 
 .form-input .form-field::placeholder {
     font-size: 18px;
-    color: #000000;
-    font-family: "Funnel Display", serif;
+    color: var(--disabled-text);
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
 }
 
 .form-field:focus {
-    outline: 3px solid #000000;
+    outline: none;
+    border-color: var(--primary-accent);
+    box-shadow: 0 0 0 3px var(--hover-accent);
 }
 
 .login-text {
     margin-top: 20px;
     margin-left: 30px;
+    color: var(--secondary-text);
 }
 
 .signup-hyperlink {
-    color: #00ffff;
+    color: var(--primary-accent);
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.signup-hyperlink:hover {
+    text-decoration: underline;
 }
 
 .form-right-side {
@@ -109,19 +138,22 @@
     align-items: center;
     width: 325px;
     height: 55px;
-    border-radius: 30px;
-    border-color: transparent;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--primary-accent);
     cursor: pointer;
-    background-color: #000000;
-    transition: all 0.3 ease;
+    background-color: var(--primary-accent);
+    transition: all 0.2s ease-in-out;
     color: white;
     font-size: 28px;
-    font-family: "Funnel Display", serif;
+    font-family: "Inter", -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
     font-weight: 600;
 }
 
 .submit-button:hover {
-    background-color: #252525;
+    background-color: #2563EB;
+    border-color: #2563EB;
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-md);
 }
 
 .form-right-side .alternate-login-box {
@@ -132,6 +164,7 @@
 
 .or-text {
     font-weight: 600;
+    color: var(--secondary-text);
 }
 
 .alternate-login-box .google-login-button {
@@ -142,14 +175,19 @@
     justify-content: center;
     width: 70%;
     height: 55px;
-    border-radius: 30px;
-    border: 3px solid black;
+    border-radius: var(--radius-lg);
+    border: 1px solid var(--divider-border);
     cursor: pointer;
     background-color: transparent;
+    transition: all 0.2s ease-in-out;
+    color: var(--primary-text);
 }
 
 .google-login-button:hover {
-    background-color: #8f7349;
+    background-color: var(--hover-accent);
+    border-color: var(--primary-accent);
+    transform: translateY(-1px);
+    box-shadow: var(--shadow-sm);
 }
 
 .google-img-box {

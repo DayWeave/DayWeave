@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import LogoPlaceholder from "../assets/logoplaceholder.png"; // Adjust path if needed
+import DayWeaveLogo from '../components/DayWeaveLogo';
 import "./Navbar.css"; // Import CSS file
 
 const Navbar = () => {
@@ -8,7 +9,9 @@ const Navbar = () => {
     <nav className="nav_bar">
       {/* Left Section: Logo + Contact */}
       <div className="nav_left">
-        <img src={LogoPlaceholder} alt="Company Logo" className="logo" />
+        <Link to="/" style={{ textDecoration: 'none' }}>
+          <DayWeaveLogo size={80} showText={true} />
+        </Link>
         <div className="nav_links">
           <Link to="/contact">
             <button className="contact">Contact</button>
@@ -16,7 +19,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      {/* Right Section: Auth buttons (Log In, Sign Up, Tutorial) */}
+      {/* Right Section: Auth buttons (Log In, Sign Up) */}
       <div className="nav_right">
         <div className="auth_bar">
           <Link to="/login">
@@ -25,7 +28,6 @@ const Navbar = () => {
           <Link to="/signup">
             <button className="signup">Sign Up</button>
           </Link>
-          <button className="tutorial">Tutorial</button>
         </div>
       </div>
     </nav>

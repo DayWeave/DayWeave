@@ -9,6 +9,7 @@ import { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
 import googleLogo from '../assets/GoogleLogo.png';
+import DayWeaveLogo from '../components/DayWeaveLogo';
 
 const Signup = () => {
     const navigate = useNavigate();
@@ -47,8 +48,8 @@ const Signup = () => {
 
     useEffect(() => {
         if (user || gUser) {
-            // Currently redirects to home page after signup
-            navigate('/');
+            // Redirect to dashboard after successful signup
+            navigate('/dashboard');
         }
     }, [user, navigate, gUser]);
 
@@ -60,7 +61,10 @@ const Signup = () => {
                 </Link>
             </div>
             <div className="signup-card">
-                <h1 className="signup-title">Sign Up</h1>
+                <div className="auth-card-header">
+                    <DayWeaveLogo size={80} showText={false} />
+                    <h1 className="signup-title">Sign Up</h1>
+                </div>
                 <form className="form" onSubmit={handleSubmit}>
                     <div className="form-left-side">
                         <input 
